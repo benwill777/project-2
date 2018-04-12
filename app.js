@@ -1,3 +1,4 @@
+require('dotenv').config()
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -12,6 +13,18 @@ const bodyParser = require('body-parser');
 
 mongoose.connect(process.env.MONGODB_URI);
 
+
+mongoose.connection.once('open', () => {
+  console.log('Mongoose has connected to MongoDB!')
+})
+
+mongoose.connection.on('error', (error) => {
+  console.error(`
+    MongoDB connection error!!! 
+    ${error}
+  `)
+  process.exit(-1)
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +51,11 @@ app.use(function (req, res, next) {
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
+
+  // Automatically redirect to the Users page on load
+  app.get('/', (request, response) => {
+    response.redirect('/users')
+  })
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
@@ -45,5 +63,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+const PORT = process.env.PORT || 4000
+app.listen(PORT, () => {
+  console.log(`Getting Jiggy on port ${PORT}`)
+})
 
 module.exports = app;
