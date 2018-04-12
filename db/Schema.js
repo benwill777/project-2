@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-mongoose.Promise = global.Promise
-
 const QuestionSchema = new Schema({
     question: String,
     answer: String
