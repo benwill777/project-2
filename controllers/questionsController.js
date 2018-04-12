@@ -13,7 +13,7 @@ Restaurant.findById(restaurantId)
     .then((restaurant) => {
         const store = restaurant.survey.id(restaurantId)
 
-        response.render('restaurants/new', {
+        res.render('restaurants/new', {
             restaurantId,
             surveyId,
             pageTitle: 'New Restaurant'

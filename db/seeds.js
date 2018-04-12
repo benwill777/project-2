@@ -42,9 +42,33 @@ const felinis = new Restaurant({
     }]
 
 })
+const theLocal = new Restaurant({
+    title: 'damn',
+    location: 'africa',
+    survey: [{
+        name: 'fun survey',
+        question: [{
+            question: 'how many drinks did you chug',
+            answer: 'about hella'
+        }]
+    }]
 
+})
+const theYeahBurger = new Restaurant({
+    title: 'crud',
+    location: 'hell',
+    survey: [{
+        name: 'how trash is our trash',
+        question: [{
+            question: 'how many times did you return your food',
+            answer: 'about 600'
+        }]
+    }]
+})
 Restaurant.remove().then(() => {
-    return Restaurant.insertMany([muddpie, felinis])
+    return Restaurant.insertMany([muddpie, felinis, theLocal,
+        theYeahBurger
+    ])
 }).then(() => {
     console.log('Saved User Successfully')
     db.close()
