@@ -4,7 +4,7 @@ const Restaurant = require('../models/Restaurant')
 
 
 
-/* GET users listing. */
+/* GET restaurants listing. */
 router.get('/', function (req, res) {
   Restaurant.find({})
     .then((restaurants) => {
@@ -19,7 +19,31 @@ router.get('/', function (req, res) {
 
 // SHOW ROUTE //
 
-router.get('/:id')
+router.get('/:RestaurantId', function (req, res) {
+  const RestaurantId = req.params.RestaurantId
+  Restaurant.findById(RestaurantId)
+    .then((restaurant) => {
+      res.render('restaurants/show', {
+        restaurant,
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+})
+
+// router.get('/:RestaurantId/', function (req, res) {
+//   const RestaurantId = req.params.RestaurantId
+//   Restaurant.findById(RestaurantId)
+//     .then((restaurant) => {
+//       res.render('restaurants/show', {
+//         restaurant,
+//       })
+//     })
+//     .catch((error) => {
+//       console.log(error)
+//     })
+// })
 
 
 module.exports = router;

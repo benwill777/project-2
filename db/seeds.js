@@ -46,7 +46,7 @@ const theLocal = new Restaurant({
     title: 'The Local',
     location: 'jamaica',
     survey: [{
-        name: 'i like this app',
+        name: 'this is a survey',
         question: [{
             question: 'how many bugs did you eat',
             answer: 'about five'
@@ -58,7 +58,7 @@ const theYeahBurger = new Restaurant({
     title: 'Yeah Burger',
     location: 'hell',
     survey: [{
-        name: 'how trash is our trash',
+        name: 'take this survey now',
         question: [{
             question: 'how many times did you return your food',
             answer: 'about 600'
