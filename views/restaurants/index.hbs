@@ -1,0 +1,11 @@
+<h1> HELLO!</h1>
+
+
+{{#each restaurants}}
+<div>
+    <a href="/restaurants/{{this._id}}">{{this.title}}</a>
+    {{!--
+    <div>{{this.location}}</div> --}}
+    <br>
+</div>
+{{/each}}

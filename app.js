@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const restaurantRouter = require('./routes/restaurant');
 const methodOverride = require('method-override');
 const app = express();
 const bodyParser = require('body-parser');
@@ -41,7 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/restaurants', restaurantRouter);
 // Automatically redirect to the Users page on load
 app.get('/', (request, response) => {
   // response.redirect('/users')

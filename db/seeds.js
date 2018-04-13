@@ -19,7 +19,7 @@ mongoose.connection.once('open', () => {
 
 
 const muddpie = new Restaurant({
-    title: 'ugly',
+    title: 'Mud Pie',
     location: 'allupunda',
     survey: [{
         name: 'fake survey',
@@ -31,7 +31,7 @@ const muddpie = new Restaurant({
 
 })
 const felinis = new Restaurant({
-    title: 'cute',
+    title: 'Felinis',
     location: 'africa',
     survey: [{
         name: 'fun survey',
@@ -43,19 +43,19 @@ const felinis = new Restaurant({
 
 })
 const theLocal = new Restaurant({
-    title: 'damn',
-    location: 'africa',
+    title: 'The Local',
+    location: 'jamaica',
     survey: [{
-        name: 'fun survey',
+        name: 'i like this app',
         question: [{
-            question: 'how many drinks did you chug',
-            answer: 'about hella'
+            question: 'how many bugs did you eat',
+            answer: 'about five'
         }]
     }]
 
 })
 const theYeahBurger = new Restaurant({
-    title: 'crud',
+    title: 'Yeah Burger',
     location: 'hell',
     survey: [{
         name: 'how trash is our trash',
