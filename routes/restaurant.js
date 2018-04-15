@@ -29,7 +29,6 @@ router.get('/:id', (req, res) => {
     })
   })
 })
-
 ///
 router.post('/', (req, res) => {
   const newRestaurant = new Restaurant({
@@ -40,6 +39,30 @@ router.post('/', (req, res) => {
     res.redirect('/restaurants')
   })
 
+})
+router.get('/:id/edit', (req, res) => {
+
+  Restaurant.findById(req.params.id).then((restaurant) => {
+    restaurant
+    res.render('restaurants/edit', {
+      id: req.params.id,
+      restaurant: restaurant,
+
+    })
+  })
+})
+router.patch('/:id', (req, res) => {
+  Restaurant.findByIdAndUpdate(req.params.id, {
+    title: req.body.title,
+    location: req.body,
+    location,
+  }, {
+    new: true
+  }).then((updatedRestaurant) => {
+    res.redirect(`/users/${updatedRestaurant._id}`)
+  }).catch((err) => {
+    console.log(err)
+  })
 })
 
 // router.get('/restaurants/:restaurantId/:name/new/', (req, res) => {
