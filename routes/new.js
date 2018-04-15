@@ -4,12 +4,12 @@ const Restaurant = require('../models/Restaurant')
 
 
 
-router.get('/restaurants/new', function (req, res) {
-    const RestaurantId = req.params.RestaurantId
-    Restaurant.findById(RestaurantId)
-        .then((restaurant) => {
-            res.render('restaurants/', {
-                restaurant,
+router.get('/views/new', function (req, res) {
+    const SurveyId = req.params.SurveyId
+    Restaurant.findById(SurveyId)
+        .then((survey) => {
+            res.render('restaurants/new', {
+                survey,
             })
         })
         .catch((error) => {

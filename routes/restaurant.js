@@ -5,7 +5,7 @@ const Restaurant = require('../models/Restaurant')
 
 
 /* GET restaurants listing. */
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   Restaurant.find({})
     .then((restaurants) => {
       res.render('restaurants/index', {
@@ -16,21 +16,32 @@ router.get('/', function (req, res) {
       console.log(err)
     })
 });
+///
 
-// SHOW ROUTE //
-
-router.get('/restaurants/new', function (req, res) {
-  const RestaurantId = req.params.RestaurantId
-  Restaurant.findById(RestaurantId)
-    .then((restaurant) => {
-      res.render('restaurants/new', {
-        restaurant,
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+///
+router.get('/new', (req, res) => {
+  res.render('restaurants/new')
 })
+router.get('/:id', (req, res) => {
+  Restaurant.findById(req.params.id).then((restaurant) => {
+    res.render('restaurants/show', {
+      restaurant: restaurant,
+    })
+  })
+})
+
+///
+router.post('/', (req, res) => {
+  const newRestaurant = new Restaurant({
+    title: req.body.title,
+    location: req.body.location,
+  })
+  newRestaurant.save().then((saverestaurant) => {
+    res.redirect('/restaurants')
+  })
+
+})
+
 // router.get('/restaurants/:restaurantId/:name/new/', (req, res) => {
 //   const RestaurantId = req.params.RestaurantId
 //   const name = req.params.name

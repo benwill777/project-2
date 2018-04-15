@@ -1,4 +1,4 @@
-<h1> HELLO! </h1>
+<h1> These are restaurants that have surveys! </h1>
 <br> {{#each restaurants}}
 <div>
     <a href="/restaurants/{{this._id}}">{{this.title}}</a>
@@ -9,8 +9,8 @@
 </div>
 
 {{/each}}
-<div class="addRestaurant">
-    <a href="restaurants/new/">
+<div class="newRestaurant">
+    <a href="/restaurants/new/">
         <button>Add new Restaurant</button>
     </a>
 </div>

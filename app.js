@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantRouter);
-// app.use('/restaurants/new', surveyRouter);
+
 // app.use('/restaurants/survey', questionRouter);
 // // Automatically redirect to the Users page on load
 app.get('/', (request, response) => {
