@@ -19,11 +19,11 @@ router.get('/', function (req, res) {
 
 // SHOW ROUTE //
 
-router.get('/:RestaurantId', function (req, res) {
+router.get('/restaurants/new', function (req, res) {
   const RestaurantId = req.params.RestaurantId
   Restaurant.findById(RestaurantId)
     .then((restaurant) => {
-      res.render('restaurants/show', {
+      res.render('restaurants/new', {
         restaurant,
       })
     })
@@ -31,19 +31,10 @@ router.get('/:RestaurantId', function (req, res) {
       console.log(error)
     })
 })
-
-// router.get('/:RestaurantId/', function (req, res) {
+// router.get('/restaurants/:restaurantId/:name/new/', (req, res) => {
 //   const RestaurantId = req.params.RestaurantId
-//   Restaurant.findById(RestaurantId)
-//     .then((restaurant) => {
-//       res.render('restaurants/show', {
-//         restaurant,
-//       })
-//     })
-//     .catch((error) => {
-//       console.log(error)
-//     })
+//   const name = req.params.name
+//   res.render('restaurant/new')
 // })
-
 
 module.exports = router;

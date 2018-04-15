@@ -10,6 +10,8 @@ const restaurantRouter = require('./routes/restaurant');
 const methodOverride = require('method-override');
 const app = express();
 const bodyParser = require('body-parser');
+// const surveyRouter = require('./routes/survey');
+// const questionRouter = require('./routes/question');
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -42,7 +44,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantRouter);
-// Automatically redirect to the Users page on load
+// app.use('/restaurants/new', surveyRouter);
+// app.use('/restaurants/survey', questionRouter);
+// // Automatically redirect to the Users page on load
 app.get('/', (request, response) => {
   // response.redirect('/users')
   res.send('Hello from FohShow')

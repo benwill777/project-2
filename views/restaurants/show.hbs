@@ -1,14 +1,18 @@
 <h1>Options For This Restuarant</h1>
 <p>{{restaurant.title}}</p>
 <h6>
-    <a href="/restaurants/{{Restaurant._id}}/edit">Update Restaurant INFO</a>
+    <a href="/restaurants/{{restaurant._id}}/edit">Update Restaurant INFO</a>
 </h6>
+
 {{#each restaurant.survey}}
 <br>
 <h6>
-    <a href="/restaurants/{{restaurant._id}}/{{this.name}}/new/">{{this.name}}</a>
+    <a href="/restaurants/{{restaurant._id}}/{{this._id}}/new/">{{this.name}}</a>
+
 </h6>
+
 <br>
+
 <div>
     <h6>
         <a href="/:id/{{this.name}}">Add a survey</a>
