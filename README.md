@@ -24,4 +24,6 @@ FlexBox
 #### My Trello Board (User Story)
 https://trello.com/b/AsuN15c4/wdi-project-2
 #### Wireframe (Balsamiq)
-
+[My Wireframe](/images/sc1.png)
+[picture 2](/images/sc2.png) 
+[picture3](/images/sc3.png)
