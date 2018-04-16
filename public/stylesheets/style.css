@@ -7,6 +7,13 @@ body {
   flex-flow: column;
 }
 
+restaurantform {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-around;
+}
+
 h1 {
   font-size: 45px;
   color: rgb(85, 182, 206);
@@ -15,7 +22,7 @@ h1 {
 }
 
 a {
-  color: rgb(72, 221, 181);
+  color: rgb(47, 240, 189);
   font-size: 280%;
   display: flex;
   flex-direction: column;
