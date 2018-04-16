@@ -1,11 +1,12 @@
 <h1>Options For This Restuarant</h1>
-<p>{{restaurant.title}}</p>
-<h6>
-    <a href="/restaurants/{{restaurant._id}}/edit">Update Restaurant Name/Location</a>
-</h6>
+<div id='imbededName'>{{restaurant.title}}</div>
 <form method="POST" action="./{{restaurant._id}}/?_method=DELETE">
     <button class="delete" type="submit">Delete This Restaurant</button>
 </form>
+<h6>
+    <a href="/restaurants/{{restaurant._id}}/edit">Update Restaurant Name/Location</a>
+</h6>
+
 
 {{#each restaurant.survey}}
 <br>

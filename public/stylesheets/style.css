@@ -17,3 +17,8 @@ a {
 .addRestaurant {
   display: flex;
 }
+
+#imbededName {
+  color: brown;
+  font-size: 90px;
+}
