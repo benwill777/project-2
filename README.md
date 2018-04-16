@@ -27,3 +27,9 @@ https://trello.com/b/AsuN15c4/wdi-project-2
 [My Wireframe](/images/sc1.png)
 [picture 2](/images/sc2.png) 
 [picture3](/images/sc3.png)
+
+### Future Versions
+I would like to give my next two models full CRUD functionality.
+I would like to give an Admin longin/permissions funtionality
+I would like to finish styling the entire application.
+

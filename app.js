@@ -7,6 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const restaurantRouter = require('./routes/restaurant');
+const surveyRouter = require('./routes/survey')
 const methodOverride = require('method-override');
 const app = express();
 const bodyParser = require('body-parser');
@@ -44,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantRouter);
+app.use('/restaurants/:id/survey', surveyRouter)
 
 // app.use('/restaurants/survey', questionRouter);
 // // Automatically redirect to the Users page on load
@@ -56,6 +58,7 @@ app.get('/', (request, response) => {
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function (err, req, res, next) {
