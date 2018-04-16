@@ -19,8 +19,8 @@ db.once('open', () => {
 
 
 const muddpie = new Restaurant({
-    title: 'Mud Pie',
-    location: 'allupunda',
+    title: 'Staplehouse',
+    location: 'Edgewood',
     survey: [{
         name: 'fake survey',
         question: [{
@@ -32,7 +32,7 @@ const muddpie = new Restaurant({
 })
 const felinis = new Restaurant({
     title: 'Felinis',
-    location: 'africa',
+    location: 'Buckhead',
     survey: [{
         name: 'fun survey',
         question: [{
