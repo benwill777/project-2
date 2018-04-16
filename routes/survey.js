@@ -7,9 +7,9 @@
 // /* GET restaurants listing. */
 // router.get('/', (req, res) => {
 //     Survey.find({})
-//       .then((restaurants) => {
-//         res.render('restaurants/', {
-//           restaurants
+//       .then((survey) => {
+//         res.render('restaurants/survey', {
+//           surveys
 //         })
 //       })
 //       .catch((err) => {

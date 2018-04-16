@@ -7,6 +7,13 @@ body {
   flex-flow: column;
 }
 
+h1 {
+  font-size: 45px;
+  color: rgb(85, 182, 206);
+  Display: flex;
+  align-content: center
+}
+
 a {
   color: rgb(72, 221, 181);
   font-size: 280%;
@@ -19,6 +26,6 @@ a {
 }
 
 #imbededName {
-  color: brown;
+  color: rgb(229, 240, 22);
   font-size: 90px;
 }
