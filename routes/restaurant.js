@@ -63,11 +63,9 @@ router.patch('/:id', (req, res) => {
     console.log(err)
   })
 })
-
-// router.get('/restaurants/:restaurantId/:name/new/', (req, res) => {
-//   const RestaurantId = req.params.RestaurantId
-//   const name = req.params.name
-//   res.render('restaurant/new')
-// })
-
+router.delete('/:id', (req, res) => {
+  Restaurant.findByIdAndRemove(req.params.id).then(() => {
+    res.redirect('/restaurants')
+  })
+})
 module.exports = router;

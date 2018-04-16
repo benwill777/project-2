@@ -1,18 +1,71 @@
-var express = require('express');
-var router = express.Router();
-const Survey = require('../models/Survey')
+// var express = require('express');
+// var router = express.Router();
+// const Survey = require('../models/Survey')
 
 
 
-/* GET restaurants listing. */
-router.get('/', function (req, res) {
-    Survey.find({})
-        .then((surveys) => {
-            res.render('restaurants/:restaurantId/survey/', {
-                surveys
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-});
+// /* GET restaurants listing. */
+// router.get('/', (req, res) => {
+//     Survey.find({})
+//       .then((restaurants) => {
+//         res.render('restaurants/', {
+//           restaurants
+//         })
+//       })
+//       .catch((err) => {
+//         console.log(err)
+//       })
+//   });
+//   ///
+
+//   ///
+//   router.get('/new', (req, res) => {
+//     res.render('restaurants/new')
+//   })
+//   router.get('/:id', (req, res) => {
+//     Restaurant.findById(req.params.id).then((restaurant) => {
+//       res.render('restaurants/show', {
+//         restaurant: restaurant,
+//       })
+//     })
+//   })
+//   ///
+//   router.post('/', (req, res) => {
+//     const newRestaurant = new Restaurant({
+//       title: req.body.title,
+//       location: req.body.location,
+//     })
+//     newRestaurant.save().then((saverestaurant) => {
+//       res.redirect('/restaurants')
+//     })
+
+//   })
+//   router.get('/:id/edit', (req, res) => {
+
+//     Restaurant.findById(req.params.id).then((restaurant) => {
+//       restaurant
+//       res.render('restaurants/edit', {
+//         id: req.params.id,
+//         restaurant: restaurant,
+
+//       })
+//     })
+//   })
+//   router.patch('/:id', (req, res) => {
+//     Restaurant.findByIdAndUpdate(req.params.id, {
+//       title: req.body.title,
+//       location: req.body.location,
+//     }, {
+//       new: true
+//     }).then((updatedRestaurant) => {
+//       res.redirect('/restaurants/')
+//     }).catch((err) => {
+//       console.log(err)
+//     })
+//   })
+//   router.delete('/:id', (req, res) => {
+//     Restaurant.findByIdAndRemove(req.params.id).then(() => {
+//       res.redirect('/restaurants')
+//     })
+//   })
+//   module.exports = router;
