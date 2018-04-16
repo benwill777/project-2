@@ -1,45 +1,27 @@
-{{!--
-<form method="POST" action=".?_method=PATCH">
-    Restaurant
-    <input type="text" name="title" placeholder="Name of Restaurant">
-    <input type="text" name="location" placeholder="Location">
-    <button type="submit">Edit This Restaurant</button>
-</form>
-</div> --}}
-
-
-
 <!doctype html>
 <html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-        crossorigin="anonymous">
-
-    <title>Add a New Restaurant!</title>
+<title>Add a New Restaurant!</title>
 </head>
 
 <body>
-    <form action="/restaurants" method="PATCH">
+    <form action="/restaurants/{{restaurant._id}}?_method=PATCH" method="POST">
         <div class="restaurantform">
             <div class="form-group">
                 <label for="RestaurantInfoEdit"></label>
-                <input type="text" name="{{title}}" class="form-control" id="nom" placeholder="Name Of Restaurant">
+                <input type="text" name="title" class="form-control" id="nom" placeholder="Name Of Restaurant">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2"></label>
-                <input type="text" name="{{location}}" class="form-control" id="loc" placeholder="Location">
+                <input type="text" name="location" class="form-control" id="loc" placeholder="Location">
             </div>
         </div>
         <button type="success">Edit Restaurant</button>
     </form>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"

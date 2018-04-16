@@ -52,13 +52,13 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 router.patch('/:id', (req, res) => {
-  Restaurant.findByIdAndUpdate(req.params.id, {
-    title: req.body.title,
-    location: req.body.location,
-  }, {
-    new: true
-  }).then((updatedRestaurant) => {
-    res.redirect('/restaurants/')
+  const updatedRestaurant = Restaurant.findByIdAndUpdate(req.params.id, {
+      title: req.body.title,
+      location: req.body.location,
+    },
+
+  ).then((updatedRestaurant) => {
+    res.redirect('/restaurants')
   }).catch((err) => {
     console.log(err)
   })

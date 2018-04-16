@@ -5,7 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
     <title>Restaurant Survey App</title>
 </head>
 
@@ -15,8 +14,6 @@
     <h1>Restaurant Options</h1>
     <div id='imbededName'>{{restaurant.title}}</div>
     <form method="POST" action="./{{restaurant._id}}/?_method=DELETE">
-        {{!--
-        <button class="deleteButton" type="submit"></button> --}}
         <button type="submit" class="btn btn-light">Delete This Restaurant</button>
     </form>
     <h6>
@@ -28,9 +25,6 @@
         <a href="/restaurants/{{restaurant._id}}/{{this._id}}/new/">{{this.name}}</a>
     </h6>
     {{/each}}
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
