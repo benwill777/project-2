@@ -16,14 +16,12 @@
     <form method="POST" action="./{{restaurant._id}}/?_method=DELETE">
         <button type="submit" class="btn btn-light">Delete This Restaurant</button>
     </form>
-    <h6>
-        <a href="/restaurants/{{restaurant._id}}/edit">Update Restaurant Name/Location</a>
-    </h6>
+
+    <a href="/restaurants/{{restaurant._id}}/edit">Update Restaurant Name/Location</a>
     {{#each restaurant.survey}}
     <br>
-    <h6>
-        <a href="/restaurants/{{restaurant._id}}/{{this._id}}/new/">{{this.name}}</a>
-    </h6>
+    <a href="/restaurants/{{restaurant._id}}/{{this._id}}/new/">{{this.name}}</a>
+
     {{/each}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

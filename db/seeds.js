@@ -13,7 +13,7 @@ db.on('error', (error) => {
 // connect to database
 mongoose.connect(process.env.MONGODB_URI)
 
-mongoose.connection.once('open', () => {
+db.once('open', () => {
     console.log(`Mongoose has connected to MongoDB`)
 })
 
@@ -44,9 +44,9 @@ const felinis = new Restaurant({
 })
 const theLocal = new Restaurant({
     title: 'The Local',
-    location: 'jamaica',
+    location: 'Ponce DeLeon',
     survey: [{
-        name: 'this is a survey',
+        name: 'Wing Sauce Survey',
         question: [{
             question: 'how many bugs did you eat',
             answer: 'about five'
@@ -56,9 +56,9 @@ const theLocal = new Restaurant({
 })
 const theYeahBurger = new Restaurant({
     title: 'Yeah Burger',
-    location: 'hell',
+    location: 'Virginia Highlands',
     survey: [{
-        name: 'take this survey now',
+        name: 'Customer Satisfaction Survey',
         question: [{
             question: 'how many times did you return your food',
             answer: 'about 600'
