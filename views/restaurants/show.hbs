@@ -14,13 +14,13 @@
     <h1>Restaurant Options</h1>
     <div id='imbededName'>{{restaurant.title}}</div>
     <form method="POST" action="./{{restaurant._id}}/?_method=DELETE">
-        <button type="submit" class="btn btn-light">Delete This Restaurant</button>
+        <button type="submit" class="btn btn-light">Delete {{restaurant.title}}</button>
     </form>
 
-    <a href="/restaurants/{{restaurant._id}}/edit">Update Restaurant Name/Location</a>
+    <a id="updateRs" href="/restaurants/{{restaurant._id}}/edit">Update Restaurant Information</a>
     {{#each restaurant.survey}}
     <br>
-    <a href="/restaurants/{{restaurant._id}}/{{this._id}}/new/">{{this.name}}</a>
+    <a id="checkSurvey" href="/restaurants/{{restaurant._id}}/{{this._id}}/new/">{{this.name}}</a>
 
     {{/each}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

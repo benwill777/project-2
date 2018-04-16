@@ -50,3 +50,17 @@ h1 {
 #welcomeId {
   color: rgb(250, 242, 8);
 }
+
+#updateRs {
+  color: rgb(2, 22, 63);
+  font-size: 25px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+#checkSurvey {
+  color: rgb(5, 1, 75);
+  font-size: 25px;
+  font-style: oblique;
+  font-weight: bold;
+}
