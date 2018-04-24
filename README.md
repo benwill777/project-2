@@ -36,3 +36,7 @@ I would like to finish styling the entire application.
 
 ### My Heroku Link
 [Link Here](https://nameless-beach-97431.herokuapp.com/restaurants)
+
+
+### Link to my ERD
+[ERD] (https://imgur.com/a/BmNL4JN)
